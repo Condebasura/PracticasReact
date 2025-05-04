@@ -8,7 +8,7 @@ import { useState } from 'react'
 function BtnLogin({ onClick }) {
 
   return (
-    <button className='btn btn-success ms-3' onClick={onClick} >
+    <button className=' btn btn-success ms-3' onClick={onClick} >
       Login
     </button>
   )
@@ -17,7 +17,7 @@ function BtnLogin({ onClick }) {
 function BtnCreate({onClick}) {
 
   return (
-    <button className='btn btn-primary ms-3' onClick={onClick}>
+    <button className='  btn btn-primary ms-3' onClick={onClick}>
       Create
     </button>
   )
@@ -43,9 +43,9 @@ function App() {
   }
   return (
     <>
-      <header>
+      <header className='Header_Nav mt-2'>
 
-        <nav className='d-flex border'>
+        <nav className=' nav d-flex '>
           <BtnLogin onClick={agregarCardLogin} />
           <BtnCreate onClick={agregarCardCreate}/>
         </nav>
