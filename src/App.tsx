@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 
 
-function BtnLogin({ onClick }) {
+function BtnLogin({onClick}) {
 
   return (
     <button className=' btn btn-success ms-3' onClick={onClick} >
@@ -25,7 +25,7 @@ function BtnCreate({onClick}) {
 
 
 
-function App() {
+export default function App() {
   const [mostrarCardLogin, setMostrarCardLogin] = useState(false);
   const [mostrarCardCreate , setMostrarCardCreate] = useState(false);
   
@@ -117,4 +117,3 @@ function App() {
 }
 
 
-export default App;
