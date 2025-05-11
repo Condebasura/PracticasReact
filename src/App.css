@@ -1,6 +1,5 @@
-.btnLogin
 
-.card-login , .card-create{
-  width: 18rem;
+.card{
+  box-shadow: 2px 2px 12px #444;
 }
 

@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 
 
-function BtnLogin({onClick}) {
+/*function BtnLogin({onClick}) {
 
   return (
     <button className=' btn btn-success ms-3' onClick={onClick} >
@@ -21,12 +21,44 @@ function BtnCreate({onClick}) {
       Create
     </button>
   )
+};*/
+
+function BtnCard ({onClick}){
+
+  return(
+    <button className='btn btn-secondary  ms-3' onClick={onClick}>
+      Boton 
+    </button>
+  )
 };
 
+function BtnClose({onClick}){
+  return(
+    <button className='btn btn-danger m-3' onClick={onClick}>
+      Cerrar
+    </button>
+  )
+}
 
+function Card({titulo, texto}){
+
+  return(
+    <>
+        <div className='card '>
+            <div className='card-header text-center text-bg-success'>
+              <h5 className='card-title'>{titulo}</h5>
+            </div>
+            <div className="card-body m-4">
+              <p className='text-center'>{texto}</p>
+            </div>
+                
+          </div>
+    </>
+  )
+}
 
 export default function App() {
-  const [mostrarCardLogin, setMostrarCardLogin] = useState(false);
+  /*const [mostrarCardLogin, setMostrarCardLogin] = useState(false);
   const [mostrarCardCreate , setMostrarCardCreate] = useState(false);
   
   const agregarCardCreate = () =>{
@@ -112,7 +144,34 @@ export default function App() {
       </div>
 
     </>
-  )
+  )*/
+const [mostrarCard , setMostrarCard] = useState(false);
+
+ const agregarCard = ()=>{
+  setMostrarCard(true);
+ }
+ const quitarCard = ()=>{
+    setMostrarCard(false)
+  
+ }
+
+return(
+  <>
+  <nav className='mt-3'>
+
+   <BtnCard onClick={agregarCard}/>
+   <BtnClose onClick={quitarCard}/>
+  </nav>
+
+  <div className='m-5'>
+    {mostrarCard &&(<Card
+    titulo= "Soy una Caja"
+    texto= "Soy el texto en una caja Bla bla bla!!!"
+    />)}
+
+  </div>
+   </>
+)
 
 }
 
