@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react'
+import { people } from './data.tsx';
 
 // Las funciones se declaran con la primera letra en mayúscula
 
@@ -40,21 +41,29 @@ function BtnClose({onClick}){
   )
 }
 
-function Card({titulo, texto}){
+function Card({titulo}){
 
-  return(
-    <>
-        <div className='card '>
+  
+  const listItem = people.map(person => 
+  
+  <div className='card mb-3 ms-2 col ' key={person.id}>
             <div className='card-header text-center text-bg-success'>
               <h5 className='card-title'>{titulo}</h5>
             </div>
             <div className="card-body m-4">
-              <p className='text-center'>{texto}</p>
+              <ul className='list-group'>
+
+              <li className='text-center list-group-item border-0' >{person.name}</li>
+              <span className='mt-2 text-center'>profession: {person.profession}</span>
+              </ul>
+
+             
             </div>
                 
           </div>
-    </>
-  )
+   
+)
+return <div className='d-flex'>{listItem}</div>
 }
 
 export default function App() {
@@ -165,8 +174,8 @@ return(
 
   <div className='m-5'>
     {mostrarCard &&(<Card
-    titulo= "Soy una Caja"
-    texto= "Soy el texto en una caja Bla bla bla!!!"
+    titulo= "Cientifico"
+    
     />)}
 
   </div>
