@@ -41,13 +41,16 @@ function BtnClose({onClick}){
   )
 }
 
+
 function Card({titulo}){
 
   
-  const listItem = people.map(person => 
   
-  <div className='card mb-3 ms-2 col ' key={person.id}>
-            <div className='card-header text-center text-bg-success'>
+  const listItem = people.map(person => 
+
+    
+<div className='card mb-3 ms-2 col 'key={person.id} >
+            <div className= "text-center text-bg-success">
               <h5 className='card-title'>{titulo}</h5>
             </div>
             <div className="card-body m-4">
@@ -62,8 +65,12 @@ function Card({titulo}){
                 
           </div>
    
-)
-return <div className='d-flex'>{listItem}</div>
+   
+   
+  
+  )
+   
+  return <div className='d-flex'>{listItem}</div>
 }
 
 export default function App() {

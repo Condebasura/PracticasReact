@@ -1,7 +1,7 @@
 export const people = [{
     id: 0 ,
     name:'Carolina Katherine Jonson' , 
-    profession: 'matematica' ,
+    profession: 'matematico' ,
     
     
 },
