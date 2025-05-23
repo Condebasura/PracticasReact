@@ -1,6 +1,8 @@
 import './App.css'
-import { useState } from 'react'
-import { people } from './data.tsx';
+import { useState } from 'react';
+import BtnCard from './components/BtnCard';
+import BtnClose from './components/BtnClose';
+import Card from './components/Card';
 
 // Las funciones se declaran con la primera letra en mayúscula
 
@@ -23,55 +25,6 @@ function BtnCreate({onClick}) {
     </button>
   )
 };*/
-
-function BtnCard ({onClick}){
-
-  return(
-    <button className='btn btn-secondary  ms-3' onClick={onClick}>
-      Boton 
-    </button>
-  )
-};
-
-function BtnClose({onClick}){
-  return(
-    <button className='btn btn-danger m-3' onClick={onClick}>
-      Cerrar
-    </button>
-  )
-}
-
-
-function Card({titulo}){
-
-  
-  
-  const listItem = people.map(person => 
-
-    
-<div className='card mb-3 ms-2 col 'key={person.id} >
-            <div className= "text-center text-bg-success">
-              <h5 className='card-title'>{titulo}</h5>
-            </div>
-            <div className="card-body m-4">
-              <ul className='list-group'>
-
-              <li className='text-center list-group-item border-0' >{person.name}</li>
-              <span className='mt-2 text-center'>profession: {person.profession}</span>
-              </ul>
-
-             
-            </div>
-                
-          </div>
-   
-   
-   
-  
-  )
-   
-  return <div className='d-flex'>{listItem}</div>
-}
 
 export default function App() {
   /*const [mostrarCardLogin, setMostrarCardLogin] = useState(false);
