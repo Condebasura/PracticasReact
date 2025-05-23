@@ -2,7 +2,7 @@ import { people } from "../data";
 
 export default function Card({titulo}){
 
-  
+
   
   const listItem = people.map(person => 
 
@@ -22,7 +22,7 @@ export default function Card({titulo}){
              
             </div>
                 <div className="card-footer">
-                  <button className="btn btn-danger">Cerrar</button>
+                  
                 </div>
           </div>
    
