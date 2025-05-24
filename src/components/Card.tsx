@@ -1,13 +1,18 @@
+
 import { people } from "../data";
+import BtnClose from "./BtnClose";
 
 export default function Card({titulo}){
 
-
+const [Card , setCard] = useState(true);
   
+const quitarCard =()=>{
+setCard(false)
+}
   const listItem = people.map(person => 
 
-    
 <div className='card mb-3 ms-2 col 'key={person.id} >
+  
             <div className= "text-center text-bg-success">
               <h5 className='card-title'>{titulo}</h5>
               
@@ -22,14 +27,17 @@ export default function Card({titulo}){
              
             </div>
                 <div className="card-footer">
-                  
+                  <BtnClose onClick={quitarCard}/>
                 </div>
           </div>
+   );
+
+
+
+
+console.log(listItem)
    
-   
-   
+  return <div className='d-flex'> {listItem}</div>
+    
   
-  )
-   
-  return <div className='d-flex'>{listItem}</div>
 }
