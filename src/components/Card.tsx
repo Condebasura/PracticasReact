@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import { people } from "../data";
 import BtnClose from "./BtnClose";
 
@@ -6,7 +6,7 @@ export default function Card({titulo}){
 
 const [Card , setCard] = useState(true);
   
-const quitarCard =()=>{
+const quitarCard =(listItem)=>{
 setCard(false)
 }
   const listItem = people.map(person => 
@@ -37,7 +37,7 @@ setCard(false)
 
 console.log(listItem)
    
-  return <div className='d-flex'> {listItem}</div>
+  return <div className='d-flex'> {Card &&(listItem)} {listItem}</div>
     
   
 }
