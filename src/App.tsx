@@ -131,14 +131,14 @@ return(
    <BtnCard onClick={agregarCard}/>
    <BtnClose onClick={quitarCard}/>
   </nav>
-
-  <div className='m-5'>
+ <div className='m-5'>
     {mostrarCard &&(<Card
     titulo= "Cientifico"
     
     />)}
 
   </div>
+ 
    </>
 )
 

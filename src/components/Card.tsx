@@ -2,12 +2,12 @@ import { useState } from "react";
 import { people } from "../data";
 import BtnClose from "./BtnClose";
 
-export default function Card({titulo}){
 
-const [Card , setCard] = useState(true);
-  
-const quitarCard =(listItem)=>{
-setCard(false)
+export default function Card({titulo  }){
+
+const [laCard , setlaCard] = useState(true);
+const quitarLacard = ()=>{
+  setlaCard(false);
 }
   const listItem = people.map(person => 
 
@@ -27,7 +27,7 @@ setCard(false)
              
             </div>
                 <div className="card-footer">
-                  <BtnClose onClick={quitarCard}/>
+                  <BtnClose onClick={quitarLacard}/>
                 </div>
           </div>
    );
@@ -36,8 +36,7 @@ setCard(false)
 
 
 console.log(listItem)
-   
-  return <div className='d-flex'> {Card &&(listItem)} {listItem}</div>
+return <div className='d-flex'> {laCard && (listItem)} </div>
     
   
 }
