@@ -27,7 +27,8 @@ export default function Card({titulo}){
                 
           </div>
    );
-
+    
+   
    return <div className='d-flex'> {listItem} </div>    
   
 }
