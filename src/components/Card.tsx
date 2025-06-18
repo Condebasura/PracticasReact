@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { people } from "../data";
+import BtnClose from "./BtnClose";
 
 
 
 export default function Card({titulo}){
 
-
+const [Person , setPerson] = useState(people)
 
   const listItem = people.map(person => 
 <div className='card mb-3 ms-2 col 'key={person.id} >
@@ -25,9 +26,16 @@ export default function Card({titulo}){
              
             </div>
                 
+                  <button className="btn btn-success" onClick={()  =>{
+                   setPerson(
+                    people.filter(Person => Person.id !== person.id)
+                   )
+
+                  }}>Eliminar</button>
+                
+                
           </div>
    );
-    
    
    return <div className='d-flex'> {listItem} </div>    
   
