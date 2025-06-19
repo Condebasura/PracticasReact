@@ -2,7 +2,8 @@ import './App.css'
 import { useState } from 'react';
 import BtnCard from './components/BtnCard';
 import BtnClose from './components/BtnClose';
-import Card from './components/Card';
+import { people } from './data';
+
 
 // Las funciones se declaran con la primera letra en mayúscula
 
@@ -115,32 +116,63 @@ export default function App() {
     </>
   )*/
 const [mostrarCard , setMostrarCard] = useState(false);
+const [Person , setPerson] = useState(people)
 
  const agregarCard = ()=>{
-  setMostrarCard(true);
+   setMostrarCard(true)
+ 
  }
- const quitarCard = ()=>{
-    setMostrarCard(false)
-  
- }
+
 
 return(
   <>
   <nav className='mt-3'>
 
    <BtnCard onClick={agregarCard}/>
-   <BtnClose onClick={quitarCard}/>
+ 
   </nav>
  <div className='m-5'>
-    {mostrarCard &&(<Card
-    titulo= "Cientifico"
-    
-    />)}
+    {mostrarCard &&(<div className='d-flex'>{  Person.map(person => 
+<div className='card mb-3 ms-2 col 'key={person.id} >
+  
+            <div className= "text-center text-bg-success">
+              <h5 className='card-title col'>Cientificos</h5>
+             
+              
+            </div>
+            <div className="card-body m-4">
+              <ul className='list-group'>
+
+              <li className='text-center list-group-item border-0' >{person.name}</li>
+              <span className='mt-2 text-center'>profession: {person.profession}</span>
+              </ul>
+
+              </div>
+             
+               <div className='card-footer'>
+              <BtnClose  onClick={()  =>{
+                setPerson(
+                  Person.filter(a => a.id !==  person.id )
+                );
+               
+                if(Person.length == 1 ){
+                  setMostrarCard(false);
+        
+                }
+                
+               }}/>
+              </div> 
+                
+                
+          </div>
+   )} </div>
+  )}
 
   </div>
  
    </>
 )
+
 
 }
 
