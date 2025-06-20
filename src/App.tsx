@@ -119,11 +119,35 @@ const [mostrarCard , setMostrarCard] = useState(false);
 const [Person , setPerson] = useState(people)
 
  const agregarCard = ()=>{
+  if(Person.length === 0){
+    setPerson(people)
+  }
    setMostrarCard(true)
  
  }
 
+ /*return(
+  <>
+  <nav className='mt-3'>
 
+   <BtnCard onClick={agregarCard}/>
+   </nav>
+
+   <ul>
+    {Person.map(person => (
+      <li key={person.id}>
+        {person.name}{''}
+        <BtnClose onClick={()=>{
+          setPerson(
+            Person.filter(a => a.id !== person.id)
+          )
+        }}/>
+      </li>
+    ) )}
+   </ul>
+  </>
+)
+*/
 return(
   <>
   <nav className='mt-3'>
@@ -151,14 +175,17 @@ return(
              
                <div className='card-footer'>
               <BtnClose  onClick={()  =>{
-                setPerson(
-                  Person.filter(a => a.id !==  person.id )
+                setPerson(pipol =>{
+
+                 const nuevoP = pipol.filter(a => a.id !==  person.id );
+                 if(nuevoP.length === 0){
+                  setMostrarCard(false)
+                 }
+                 
+                 return nuevoP;
+                }
                 );
                
-                if(Person.length == 1 ){
-                  setMostrarCard(false);
-        
-                }
                 
                }}/>
               </div> 
@@ -174,6 +201,6 @@ return(
 )
 
 
+
+
 }
-
-
