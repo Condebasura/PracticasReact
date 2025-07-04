@@ -1,8 +1,8 @@
 import './App.css'
 import { useState } from 'react';
 import BtnCard from './components/BtnCard';
-import BtnClose from './components/BtnClose';
 import { people } from './data';
+import Card from './components/Card';
 
 
 // Las funciones se declaran con la primera letra en mayúscula
@@ -156,44 +156,13 @@ return(
  
   </nav>
  <div className='m-5'>
-    {mostrarCard &&(<div className='d-flex'>{  Person.map(person => 
-<div className='card mb-3 ms-2 col 'key={person.id} >
-  
-            <div className= "text-center text-bg-success">
-              <h5 className='card-title col'>Cientificos</h5>
-             
-              
-            </div>
-            <div className="card-body m-4">
-              <ul className='list-group'>
-
-              <li className='text-center list-group-item border-0' >{person.name}</li>
-              <span className='mt-2 text-center'>profession: {person.profession}</span>
-              </ul>
-
-              </div>
-             
-               <div className='card-footer'>
-              <BtnClose  onClick={()  =>{
-                setPerson(pipol =>{
-
-                 const nuevoP = pipol.filter(a => a.id !==  person.id );
-                 if(nuevoP.length === 0){
-                  setMostrarCard(false)
-                 }
-                 
-                 return nuevoP;
-                }
-                );
-               
-                
-               }}/>
-              </div> 
-                
-                
-          </div>
-   )} </div>
-  )}
+    {mostrarCard &&(<Card
+    setMostrarCard={setMostrarCard}
+    personList={Person}
+    setPersonList={setPerson}
+    
+    
+    /> )}
 
   </div>
  
