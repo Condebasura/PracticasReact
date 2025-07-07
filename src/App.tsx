@@ -3,6 +3,8 @@ import { useState } from 'react';
 import BtnCard from './components/BtnCard';
 import { people } from './data';
 import Card from './components/Card';
+import Panel from './components/Panel';
+import { Person } from './data';
 
 
 // Las funciones se declaran con la primera letra en mayúscula
@@ -116,7 +118,8 @@ export default function App() {
     </>
   )*/
 const [mostrarCard , setMostrarCard] = useState(false);
-const [Person , setPerson] = useState(people)
+const [Person , setPerson] = useState<Person[]>(people);
+const [activeIndex , setActiveIndex] = useState(0);
 
  const agregarCard = ()=>{
   if(Person.length === 0){
@@ -150,7 +153,7 @@ const [Person , setPerson] = useState(people)
 */
 return(
   <>
-  <nav className='mt-3'>
+  <nav className='m-3  sticky-top'>
 
    <BtnCard onClick={agregarCard}/>
  
@@ -165,6 +168,22 @@ return(
     /> )}
 
   </div>
+
+  <Panel
+  title="Panel desplegado por defecto"
+  isActive={activeIndex === 0}
+  inShow={() => setActiveIndex(0)}
+ children={"Un panel  que esta desplegado por defecto"} 
+  />
+  
+  <Panel
+  title="Panel oculto por defecto"
+  isActive={activeIndex === 1}
+  inShow={() => setActiveIndex(1)}
+  children={"Un panel que esta oculto por defecto"}
+  
+  />
+  
  
    </>
 )

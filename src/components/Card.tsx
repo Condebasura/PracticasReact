@@ -1,9 +1,17 @@
 
+import React from "react";
 import BtnClose from "./BtnClose";
+import { Person } from "../data";
 
 
+interface CardProps{
+  setMostrarCard:(mostrar: boolean)=> void;
+  personList:Person[];
+  setPersonList:React.Dispatch<React.SetStateAction<Person[]>>;
+}
 
-export default function Card({ setMostrarCard, personList, setPersonList}) {
+
+export default function Card({ setMostrarCard, personList, setPersonList} : CardProps) {
 
 
               return(
