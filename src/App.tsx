@@ -119,6 +119,7 @@ export default function App() {
   )*/
 const [mostrarCard , setMostrarCard] = useState(false);
 const [Person , setPerson] = useState<Person[]>(people);
+  // el estado se pasa como props en el componente Panel
 const [activeIndex , setActiveIndex] = useState(0);
 
  const agregarCard = ()=>{
