@@ -5,6 +5,7 @@ import { people } from './data';
 import Card from './components/Card';
 import Panel from './components/Panel';
 import { Person } from './data';
+import Formulario  from './components/Form';
 
 
 // Las funciones se declaran con la primera letra en mayúscula
@@ -185,7 +186,7 @@ return(
   
   />
   
- 
+ <Formulario/>
    </>
 )
 
