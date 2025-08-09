@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function Formulario(){
+export default function Formu(){
 const inputRef = useRef(null);
 
     function handleClick(){
@@ -15,4 +15,5 @@ const inputRef = useRef(null);
             </button>
         </>
     )
+
 }
