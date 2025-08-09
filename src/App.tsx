@@ -186,7 +186,7 @@ return(
   
   />
   
- <Formulario/>
+ <Formu/>
    </>
 )
 
@@ -194,3 +194,4 @@ return(
 
 
 }
+
