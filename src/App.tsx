@@ -12,13 +12,13 @@ import Btn from './components/Btn';
 export default function App() {
 const [Tipos , setTipos] = useState('Ingreso');
 
-    
   
 return(<>
 <div className='row '>
 
 <div className='m-5 col-1 border border-end-5 '>
 
+    
 <Btn titulo='ingreso' className='btn btn-success m-2' onClick={()=> setTipos('Ingreso')}/>
 <Btn titulo='Turno' className='btn btn-primary m-2' onClick={()=> setTipos('Turno')}/>
 </div>
@@ -30,6 +30,8 @@ campos={[
 { className: 'bg-primary m-2' , name: 'Apellido'},
 {className: 'bg-primary m-2' , name: 'Direccion' },
 ]}
+
+
 />)}
 {Tipos === 'Turno' &&( <Formulario
 titulo='Turno'

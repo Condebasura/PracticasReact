@@ -1,5 +1,8 @@
+
 import InputDiv from "./DivInputs";
 import Inputs from "./Inputs";
+
+
 
 type Campo = {
     className:string;
@@ -9,11 +12,16 @@ type Campo = {
 type FormProps={
     titulo: string;
     campos: Campo[];
+
 }
 
 
 export default function Formulario({titulo , campos}: FormProps){
-return(
+
+
+    return(
+
+    
     <InputDiv
     titulo={titulo}
     childrens={(
@@ -24,12 +32,13 @@ return(
               <Inputs
               key={i}
               name={campo.name}
-              className={campo.className}
+              className={campo.className}      
               />
             ) 
         })}
-        </>
+</>
     )}
+    
     />
 );
 }
