@@ -4,6 +4,8 @@ import Formulario from './components/Form';
 import Btn from './components/Btn';
 
 
+
+
 // Las funciones se declaran con la primera letra en mayúscula
 
 // Seguir practicando sobre los hooks , booleans y demas
@@ -30,6 +32,7 @@ campos={[
 { className: 'bg-primary m-2' , name: 'Apellido'},
 {className: 'bg-primary m-2' , name: 'Direccion' },
 ]}
+
 
 
 />)}
