@@ -1,58 +1,58 @@
 
-import InputDiv from "./DivInputs";
+
 import Inputs from "./Inputs";
-import Btn from "./Btn";
 import { useState } from "react";
 
 
 
-type Campo = {
-    className:string;
-    name: string;
-}
+
 
 type FormProps={
     titulo: string;
-    campos: Campo[];
+    className:string;
+   
+    campos: string[];
     
 
 }
 
 
-export default function Formulario({titulo , campos }: FormProps){
-const [nombre , setNombre] = useState('');
+export default function Formulario({titulo , className , campos}: FormProps){
+    // Record pertenece a TypeScript y dice: 'mi objeto tiene clave de tipo string y  valores de tipo string'
+const [valores , setValores] = useState<Record<string, string>>({});
+
+const handleChange = (campo: string , valor: string)=>{
+    setValores((prev) =>({...prev, [campo]: valor}));
+    // ...prev sirve para copiar las propiedades de un objeto
+}
 
 const handleSubmit = (e: React.FormEvent)  =>{
     e.preventDefault();
-    console.log("este es el nombre", nombre)
+    console.log(`${titulo} =>`, valores)
 }
 
     return(
-        <form onSubmit={handleSubmit}>
-
-
-        <InputDiv
-        titulo={titulo}
-        childrens={(
         <>
-        {campos.map((campo ,i )=>{
-          return(
-             
+        <form onSubmit={handleSubmit} >
+         <h3 className="text-center">
+            {titulo}
+            </h3>
+            {campos.map((campo)=>(
+             <div key={campo}>
+              
+            <Inputs 
+            name={campo}
+            className={className}
+            value={valores[campo] || ''}
+            onChange={(e)=> handleChange(campo, e)}
+            />
+            </div>
+            ))}
             
-              <Inputs
-              key={i}
-              name={campo.name}
-              className={campo.className}
+             
            
-                   
-              />
-            ) 
-        })}
-        <button>Enviar</button>
-</>
-    )}
-    
-    />
+         <button type="submit">Enviar</button>
     </form>
-);
+        </>
+)
 }

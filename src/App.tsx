@@ -27,23 +27,20 @@ return(<>
 <div className='m-5'>
 {Tipos === 'Ingreso' &&( <Formulario
 titulo='Ingreso' 
-campos={[
-{className: 'bg-primary m-2' , name: 'Nombre'},
-{ className: 'bg-primary m-2' , name: 'Apellido'},
-{className: 'bg-primary m-2' , name: 'Direccion' },
-]}
 
+className='bg bg-secondary m-2' 
+campos={['Nombre', 'Apellido']}
 
 
 />)}
 {Tipos === 'Turno' &&( <Formulario
 titulo='Turno'
-campos={[
-{className: 'bg-primary m-2' , name: 'Nombre'},
-{ className: 'bg-primary m-2' , name: 'Apellido'},
-{className: 'bg-primary m-2' , name: 'DNI' },
+className='bg bg-danger m-2'
+campos={['Nombre', 'Apellido', 'DNI']}
+    
 
-]}
+
+
 
 />)}
 </div>
