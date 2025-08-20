@@ -10,7 +10,6 @@ import { useState } from "react";
 type FormProps={
     titulo: string;
     className:string;
-   
     campos: string[];
     
 
@@ -25,10 +24,27 @@ const handleChange = (campo: string , valor: string)=>{
     setValores((prev) =>({...prev, [campo]: valor}));
     // ...prev sirve para copiar las propiedades de un objeto
 }
+// Dentro de la funcion de submit creo el envio por fetch dependiendo del formulario que se use
 
-const handleSubmit = (e: React.FormEvent)  =>{
+const handleSubmit = async (e: React.FormEvent)  =>{
     e.preventDefault();
-    console.log(`${titulo} =>`, valores)
+
+    let url = "";
+    if(titulo === 'Ingreso'){
+       url = "http://localhost:5173"
+        
+    }else if(titulo === 'Turno'){
+        url = "http://localhost:5173"
+        
+    }
+
+    const res = await fetch(url, {
+        method: "POST",
+       headers: {"Content-Type": "application/json"},
+       body: JSON.stringify(valores)
+    })
+   const data = await res.json()
+   console.log(`${titulo}`,data)
 }
 
     return(
