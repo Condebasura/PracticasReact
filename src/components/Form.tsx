@@ -31,10 +31,10 @@ const handleSubmit = async (e: React.FormEvent)  =>{
 
     let url = "";
     if(titulo === 'Ingreso'){
-       url = "http://localhost:5173"
+       url = "http://localhost:3000/ingreso"
         
     }else if(titulo === 'Turno'){
-        url = "http://localhost:5173"
+        url = "http://localhost:3000/Turno"
         
     }
 
@@ -43,9 +43,10 @@ const handleSubmit = async (e: React.FormEvent)  =>{
        headers: {"Content-Type": "application/json"},
        body: JSON.stringify(valores)
     })
-   const data = await res.json()
-   console.log(`${titulo}`,data)
-}
+   const data = await res.json();
+   const obj = JSON.parse(data);
+   console.log(`${titulo}`,obj)
+ }
 
     return(
         <>
