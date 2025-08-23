@@ -9,14 +9,13 @@ import { useState } from "react";
 
 type FormProps={
     titulo: string;
-    className:string;
     campos: string[];
     
 
 }
 
 
-export default function Formulario({titulo , className , campos}: FormProps){
+export default function Formulario({titulo  , campos}: FormProps){
     // Record pertenece a TypeScript y dice: 'mi objeto tiene clave de tipo string y  valores de tipo string'
 const [valores , setValores] = useState<Record<string, string>>({});
 
@@ -59,7 +58,6 @@ const handleSubmit = async (e: React.FormEvent)  =>{
               
             <Inputs 
             name={campo}
-            className={className}
             value={valores[campo] || ''}
             onChange={(e)=> handleChange(campo, e)}
             />

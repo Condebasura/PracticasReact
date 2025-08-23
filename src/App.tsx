@@ -28,14 +28,14 @@ return(<>
 {Tipos === 'Ingreso' &&( <Formulario
 titulo='Ingreso' 
 
-className='bg bg-secondary m-2' 
+
 campos={['Nombre', 'Apellido']}
 
 
 />)}
 {Tipos === 'Turno' &&( <Formulario
 titulo='Turno'
-className='bg bg-danger m-2'
+
 campos={['Nombre', 'Apellido', 'DNI']}
     
 
